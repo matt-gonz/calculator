@@ -1,5 +1,6 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(19, 58, 90);
 }
 
 .main{
@@ -36,13 +37,11 @@ body{
 }
 
 .buttons-grid{
-    background-color: brown;
     flex: 0.8;
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 4px;
-    border: 2px solid black;
 }
 
 #clearBtn,
@@ -51,6 +50,8 @@ body{
 }
 
 .btn{
+    background-color: steelblue;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,4 +59,24 @@ body{
     border-radius: 10px;
     font-weight: bold;
     font-size: 20px;
+}
+
+.btn-operator{
+    background-color: rgb(46, 84, 116);
+}
+
+.btn:hover{
+    background-color: rgb(88, 170, 238);
+}
+
+.btn:active{
+    background-color: rgb(89, 180, 255);
+}
+
+.btn-operator:hover{
+    background-color: rgb(92, 149, 196);
+}
+
+.btn-operator:active{
+    background-color: rgb(102, 166, 219);
 }
