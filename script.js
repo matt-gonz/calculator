@@ -9,6 +9,8 @@ let operand1 = null;
 let operand2 = null;
 let result = null;
 
+window.addEventListener('keydown', handleKeyboardInput);
+
 buttons.forEach(btn => btn.addEventListener('click', function(event){
     if (btn.classList.contains('btn-number')){
         let selectedNumber = event.target.textContent;
@@ -37,6 +39,49 @@ buttons.forEach(btn => btn.addEventListener('click', function(event){
         updateDisplay();
     }
 }))
+
+function handleKeyboardInput(e) {
+    if (e.key >= 0 && e.key <= 9){
+        inputOperand(e.key);
+        updateDisplay();
+    } 
+    else if (e.key === '.'){
+        inputDecimal('.');
+        updateDisplay();
+    } 
+    else if (e.key === '=' || e.key === 'Enter'){
+        inputEquals();
+        updateDisplay();
+    } 
+    else if (e.key === 'Backspace'){
+        inputBackspace();
+        updateDisplay();
+    }
+    else if (e.key === 'Escape'){
+        clearDisplay();
+        updateDisplay();
+    } 
+    else if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/'){
+        inputOperator(convertOperator(e.key));
+        updateDisplay();
+    }
+      
+}
+
+function convertOperator(operator){
+    if (operator === '+'){
+        return '+';
+    }     
+    else if (operator === '-'){
+        return '-';
+    }
+    else if (operator === '/'){
+        return '÷';
+    }
+    else if (operator === '*'){
+        return 'x';
+    }
+}
 
 function inputEquals(){
     if (operator1 === null){
