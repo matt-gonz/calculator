@@ -80,3 +80,14 @@ body{
 .btn-operator:active{
     background-color: rgb(102, 166, 219);
 }
+
+footer{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    overflow-x: hidden;
+    color: white;    
+}
